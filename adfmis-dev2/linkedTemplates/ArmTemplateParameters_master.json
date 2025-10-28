@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfmis-dev2"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LS_ADLSGen2_accountKey": {
+			"value": ""
+		},
+		"SqlServerDev_connectionString": {
+			"value": ""
+		},
+		"SqlServerProd_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "misdevsqldb.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "mis_dev"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "misadminuser"
+		},
+		"LS_ADLSGen2_properties_typeProperties_url": {
+			"value": "https://adlsgen2misdev2.dfs.core.windows.net/"
+		},
+		"SHIR-Shared_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/4a3f0684-9e0a-4093-9e85-fc8d68a929d3/resourcegroups/RG_MIS_DEV/providers/Microsoft.DataFactory/factories/adfmis-dev/integrationruntimes/MIS-SHIR"
+		},
+		"AzureDataLakeStoragePvtEndPoint-Dev_properties_privateLinkResourceId": {
+			"value": "/subscriptions/4a3f0684-9e0a-4093-9e85-fc8d68a929d3/resourceGroups/RG_MIS_DEV2/providers/Microsoft.Storage/storageAccounts/adlsgen2misdev2"
+		},
+		"AzureDataLakeStoragePvtEndPoint-Dev_properties_groupId": {
+			"value": "dfs"
+		},
+		"AzureDataLakeStoragePvtEndPoint-Dev_properties_fqdns": {
+			"value": [
+				"adlsgen2misdev2.dfs.core.windows.net"
+			]
+		},
+		"AzurePostgreSQLPvtEndPoint-Dev2_properties_privateLinkResourceId": {
+			"value": "/subscriptions/4a3f0684-9e0a-4093-9e85-fc8d68a929d3/resourceGroups/RG_MIS_DEV2/providers/Microsoft.DBforPostgreSQL/servers/misdev2postgresdb"
+		},
+		"AzurePostgreSQLPvtEndPoint-Dev2_properties_groupId": {
+			"value": "postgresqlServer"
+		},
+		"AzurePostgreSQLPvtEndPoint-Dev2_properties_fqdns": {
+			"value": [
+				"misdev2postgresdb.postgres.database.azure.com"
+			]
+		},
+		"AzurePostgreSqlPvtEndPoint-Dev_properties_privateLinkResourceId": {
+			"value": "/subscriptions/4a3f0684-9e0a-4093-9e85-fc8d68a929d3/resourceGroups/RG_MIS_DEV/providers/Microsoft.DBforPostgreSQL/servers/misdevpostgresdb"
+		},
+		"AzurePostgreSqlPvtEndPoint-Dev_properties_groupId": {
+			"value": "postgresqlServer"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
