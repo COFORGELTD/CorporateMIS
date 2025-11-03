@@ -1,0 +1,9 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_OneLake_to_SQLTgt",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {},
+  "connections": []
+}

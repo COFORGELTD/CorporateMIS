@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pipeline_OneLake_to_TargetDW"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dba59e0b-bd33-bf17-4b23-b855768a1142"
+  }
+}

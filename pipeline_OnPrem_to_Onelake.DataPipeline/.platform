@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pipeline_OnPrem_to_Onelake"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "00a244a5-95d7-85d0-4d84-e5131401217b"
+  }
+}
