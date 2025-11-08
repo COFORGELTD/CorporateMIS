@@ -1,0 +1,22 @@
+{
+	"name": "ds_fabric_lakehouse_az",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_fabric_lakehouse_az",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "LakehouseLocation",
+				"folderPath": "bronze layer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
