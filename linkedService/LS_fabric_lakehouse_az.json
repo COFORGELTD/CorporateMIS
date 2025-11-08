@@ -1,0 +1,12 @@
+{
+	"name": "LS_fabric_lakehouse_az",
+	"properties": {
+		"annotations": [],
+		"type": "Lakehouse",
+		"typeProperties": {
+			"workspaceId": "5142d00b-170d-42be-82e4-34ec17cad574",
+			"artifactId": "67b7f857-5216-4069-8d6c-10d3f63b3234",
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}
