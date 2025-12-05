@@ -1,0 +1,86 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SqlServerSource",
+            "sqlReaderQuery": "select * from [ntlniitess].[dbo].[VW_ZCP_COST_VS_BILL] where TIME >=(select case \nwhen month(getdate()) in (3,6,9,12) then concat(rtrim(ltrim(cast((year(getDate())) as char))),right('00' + convert(varchar(2),month(getDate())-2),2)) \nwhen month(getdate()) in (2,5,8,11) then concat(rtrim(ltrim(cast((year(getDate())) as char))),right('00' + convert(varchar(2),month(getDate())-1),2)) \nwhen month(getdate()) in (4,7,10) then concat(rtrim(ltrim(cast((year(getDate())) as char))),right('00' + convert(varchar(2),month(getDate())-3),2))\nwhen month(getdate()) in (1) then concat(rtrim(ltrim(cast((year(getDate())-1) as char))),'10') end as time);",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00",
+            "datasetSettings": {
+              "type": "SqlServerTable",
+              "schema": [],
+              "externalReferences": {
+                "connection": "0c4fb964-3c4f-4b01-b66a-f4c306fe9ef1"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DelimitedTextSink",
+            "formatSettings": {
+              "type": "DelimitedTextWriteSettings",
+              "fileExtension": ".txt"
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "fileName": {
+                    "value": "@concat('cvb_',formatDateTime(utcNow(), 'yyyy-MM-dd'))",
+                    "type": "Expression"
+                  }
+                },
+                "columnDelimiter": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Utilization_cvb_lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "5881d841-6f1c-9bc6-47dc-1ae9c6457bec",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "externalReferences": {
+                    "connection": "3c8a419f-da7d-468f-9244-74eed2c3317e"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "dependsOn": []
+      }
+    ]
+  }
+}
